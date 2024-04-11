@@ -1,10 +1,15 @@
 "use client";
 
+import React from 'react';
+import Layout from '@/components/custom/layout';
 
-export default function HomeDashBoard() {
+export default function HomeDashboard() {
   return (
-    <div className="container mx-auto py-10">
-        <h1 className="text-2xl">Home DashBoard</h1>
-    </div>
+    <Layout>
+      <div className="container mx-auto py-10">
+        <h1>Welcome to the Dashboard!</h1>
+        <p>This is the main dashboard content.</p>
+      </div>
+    </Layout>
   );
 }

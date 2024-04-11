@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { useToast } from "@/components/ui/use-toast"
 
 const Login: NextPage = () => {
   const router = useRouter();
@@ -20,11 +21,11 @@ const Login: NextPage = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    if (email === 'admin' && password === 'admin') {
-    
+    if (email === 'ash' && password === 'pikachu') {
       router.push('/home');
     } else {
-      console.error('Login failed: Invalid email or password');
+      //add shadcn dialog to show error
+      alert('Invalid email or password');
     }
   };
 

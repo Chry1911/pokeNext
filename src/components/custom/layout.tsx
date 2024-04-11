@@ -1,0 +1,20 @@
+import React, { ReactNode } from 'react';
+import NavigationMenu from '@/components/custom/navigation';
+
+
+interface LayoutProps {
+    children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div className="flex">
+      <NavigationMenu />
+      <div className="flex-1 bg-gray-200 p-10">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default Layout;

@@ -34,3 +34,13 @@ The app use this repository: https://github.com/PokeAPI/pokedex-promise-v2 to in
 
 ## Deploy
 The app is hosted on Vercel here: https://poke-next-tan.vercel.app/
+
+## Login into application
+Username:
+```
+ash
+```
+Password:
+```
+pikachu
+```
