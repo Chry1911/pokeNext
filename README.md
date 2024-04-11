@@ -1,31 +1,36 @@
-Poke Next
-Welcome to Poke Next! This project is created with the latest version of Next.js and utilizes the PokeAPI Promise v2 library for efficient data fetching and caching.
+# Poke Next
 
-Getting Started
+Welcome to Poke Next! This project is created with the latest version of Next.js and utilizes the [PokeAPI Promise v2 library](https://github.com/PokeAPI/pokedex-promise-v2) for efficient data fetching and caching.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Deployment](#deployment)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Getting Started
+
 To run the project locally, follow these steps:
 
-Make sure you have Node.js and npm installed on your machine.
-Clone this repository to your local machine.
-Navigate to the project directory in your terminal.
-Run the following command to install dependencies:
-bash
-Copy code
+1. Make sure you have Node.js and npm installed on your machine.
+2. Clone this repository to your local machine.
+3. Navigate to the project directory in your terminal.
+4. Run the following command to install dependencies:
+
+```bash
 npm install
-Once the dependencies are installed, start the development server with:
-bash
-Copy code
+```
+
+## Run the project
+When the dependencies are installed, you can run the project by using:
+```
 npm run dev
-The development server will start, and you can view the app by visiting http://localhost:3000 in your browser.
+```
 
-Deployment
-This app is deployed on Vercel. You can test the deployed version here.
+## Features
+The app use this repository: https://github.com/PokeAPI/pokedex-promise-v2 to interrogate API that use a caching
 
-Features
-Fetches data from the PokeAPI using the PokeAPI Promise v2 library.
-Utilizes caching for efficient data retrieval.
-Provides a user-friendly interface to explore Pokémon information.
-Contributing
-Contributions are welcome! If you have any ideas for improvements or would like to report a bug, please open an issue or submit a pull request on GitHub.
-
-License
-This project is licensed under the MIT License.
+## Deploy
+The app is hosted on Vercel here: https://poke-next-tan.vercel.app/
