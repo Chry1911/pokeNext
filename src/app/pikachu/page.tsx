@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Layout from '@/components/custom/layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMars, faVenus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faMars, faVenus, faArrowRight, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import StatsChart from '@/components/custom/statschart';
 
 export default function Pikachu() {
@@ -99,7 +99,7 @@ export default function Pikachu() {
           <StatsChart  />
         </div>
 
-        
+        {/*
         <div className='mt-8'>
           <h2 className='text-2xl font-bold mb-4'>Pokemon Evolution</h2>
           <div className='flex justify-center items-center space-x-4'>
@@ -141,6 +141,56 @@ export default function Pikachu() {
             </Card>
           </div>
           </div>
+  */}
+
+<div className='mt-8'>
+  <h2 className='text-2xl font-bold mb-4'>Pokemon Evolution</h2>
+  <div className='flex flex-col md:flex-row justify-center items-center space-x-4 md:space-x-0'>
+    <Card className='bg-white border-2 border-black max-w-xs md:max-w-none md:w-64'>
+      <CardContent>
+        <img
+          src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/172.png'
+          alt='Pichu'
+          className='rounded-full mb-4 mx-auto w-24 h-24 md:w-32 md:h-32'
+        />
+        <p className='text-center'>Pichu #0172</p>
+      </CardContent>
+    </Card>
+    <div className='hidden md:flex items-center'>
+      <FontAwesomeIcon icon={faArrowRight} className='text-4xl text-gray-600' />
+    </div>
+    <div className='md:hidden flex justify-center'>
+      <FontAwesomeIcon icon={faArrowDown} className='text-4xl text-gray-600' />
+    </div>
+    <Card className='bg-white border-2 border-black max-w-xs md:max-w-none md:w-64'>
+      <CardContent>
+        <img
+          src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png'
+          alt='Pikachu'
+          className='rounded-full mb-4 mx-auto w-24 h-24 md:w-32 md:h-32'
+        />
+        <p className='text-center'>Pikachu #0025</p>
+      </CardContent>
+    </Card>
+    <div className='hidden md:flex items-center'>
+      <FontAwesomeIcon icon={faArrowRight} className='text-4xl text-gray-600' />
+    </div>
+    <div className='md:hidden flex justify-center'>
+      <FontAwesomeIcon icon={faArrowDown} className='text-4xl text-gray-600' />
+    </div>
+    <Card className='bg-white border-2 border-black max-w-xs md:max-w-none md:w-64'>
+      <CardContent>
+        <img
+          src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png'
+          alt='Raichu'
+          className='rounded-full mb-4 mx-auto w-24 h-24 md:w-32 md:h-32'
+        />
+        <p className='text-center'>Raichu #0026</p>
+      </CardContent>
+    </Card>
+  </div>
+</div>
+
 
       </div>
     </Layout>

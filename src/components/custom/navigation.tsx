@@ -1,13 +1,24 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import Link from 'next/link';
 
 const NavigationMenu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="flex flex-col h-screen w-64 bg-gray-800 shadow-lg">
-      <div className="flex flex-col flex-grow">
+    <div className="relative">
+      <div className={`flex flex-col h-screen md:w-64 bg-gray-800 shadow-lg ${isMenuOpen ? '': 'hidden md:flex'}`}>
         <div className="flex items-center justify-center h-16 bg-gray-900 text-white text-xl font-semibold">
           <img src="/poke.png" alt="Pokemon Logo" className="h-8 mr-2" />
           <span className="ml-2">Card System</span>
+          <button className="md:hidden ml-auto mr-4" onClick={toggleMenu}>
+            {isMenuOpen ? 'Close' : 'Open'}
+          </button>
         </div>
         <ul className="py-4 flex-grow overflow-y-auto">
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
