@@ -13,7 +13,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NextPage } from 'next';
 import Image from 'next/image';
-import { useToast } from "@/components/ui/use-toast"
 
 const Login: NextPage = () => {
   const router = useRouter();
