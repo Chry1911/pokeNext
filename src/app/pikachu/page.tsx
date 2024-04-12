@@ -5,6 +5,7 @@ import Layout from '@/components/custom/layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import StatsChart from '@/components/custom/statschart';
 
 export default function Pikachu() {
   const [description, setDescription] = useState('Pikachu is an Electric-type Pokémon. It evolves from Pichu when leveled up with high friendship and evolves into Raichu when exposed to a Thunder Stone.');
@@ -16,6 +17,7 @@ export default function Pikachu() {
   const handleBlueButtonClick = () => {
     setDescription('When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.');
   };
+
 
   return (
     <Layout>
@@ -91,10 +93,10 @@ export default function Pikachu() {
           </div>
         </div>
 
-        {/* Pokemon Stats */}
+        
         <div className='mt-8'>
           <h2 className='text-2xl font-bold mb-4'>Pokemon Stats</h2>
-          {/* Insert your Pokemon stats information here */}
+          <StatsChart  />
         </div>
 
         
