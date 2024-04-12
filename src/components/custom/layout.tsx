@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <NavigationMenu />
       <div className="flex-1 bg-gray-200 p-10">
         {children}
