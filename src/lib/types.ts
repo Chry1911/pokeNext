@@ -5,3 +5,9 @@ export type PokemonType = {
     types: { name: string }[];
     sprites: { front_default: string | null };
 }
+
+export type Deck = {
+    id: string;
+    name: string;
+    cards: PokemonType[];
+}
