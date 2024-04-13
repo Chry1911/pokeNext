@@ -27,10 +27,14 @@ const NavigationMenu = () => {
             </Link>
           </li>
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
-            <a className="text-white hover:text-gray-300">Cerca Pokemon</a>
+          <Link href="/search">
+              <span className="text-white hover:text-gray-300">Pokedex</span>
+            </Link>
           </li>
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
-            <a className="text-white hover:text-gray-300">Deck</a>
+          <Link href="/deck">
+              <span className="text-white hover:text-gray-300">Deck</span>
+            </Link>
           </li>
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
             <Link href="/pikachu">
