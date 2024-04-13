@@ -50,7 +50,7 @@ pikachu
 Info for run the application on docker
 
 ## Notes
-In the first point of the text, the application asks to do a search with minimum 3 characters and i have done this, but if i try to search "pik" or something else, the api returns 404
+In the first point of the text, the application asks to do a search with minimum 3 characters and i have done this, but if i try to search "pik" or something else, the api returns 404.
 The api wants the correct name of the pokemon to search.
 I have created a simple cache, to evitate a new reasearch of the same pokemon. 
 Deck can be only one, when created it will be saved into the Local Storage. If you add the 11 card, it replace the first one with the new one.
@@ -59,3 +59,5 @@ Menu shows 4 items:
 - pokedex (search pokemon)
 - deck (show your deck)
 - pikachu (show pika page)
+
+there is only a little problem on mobile, the menu in portrait mode disappear, if you use the website in landscape all is ok.
