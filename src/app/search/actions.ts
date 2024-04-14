@@ -15,14 +15,15 @@ let cachedPokemon: Pokemon[] = [];
 
 export async function searchPokemon(query: string): Promise<Pokemon[]> {
     try {
+        const lowerCaseQuery = query.toLowerCase();
         
-        const cachedIndex = cachedPokemon.findIndex(pokemon => pokemon.name === query);
+        const cachedIndex = cachedPokemon.findIndex(pokemon => pokemon.name === lowerCaseQuery);
         if (cachedIndex !== -1) {
             return [cachedPokemon[cachedIndex]]; 
         }
 
         
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${query}`);
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowerCaseQuery}`);
         const pokemonData = response.data;
 
         

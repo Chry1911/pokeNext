@@ -5,6 +5,7 @@ Welcome to Poke Next! This project is created with the latest version of Next.js
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+- [Used Components](#used-components)
 - [Deployment](#deployment)
 - [Login](#login)
 - [Docker](#docker)
@@ -29,6 +30,12 @@ When the dependencies are installed, you can run the project by using:
 npm run dev
 ```
 
+## Used Components
+for this project i have used: 
+- https://ui.shadcn.com/ for layout components (only buttons and inputs are not shadcn libraries)
+- https://commerce.nearform.com/open-source/victory/docs/victory-chart/ (used to create a chart in pikachu page with the pokemon stats)
+
+
 ## Features
 The app use this repository: https://github.com/PokeAPI/pokedex-promise-v2 to interrogate API that use a caching (not working on localhost)
 So i have changed the logic, using axios, and fetching directly to the api provided in the text.
@@ -52,12 +59,10 @@ Info for run the application on docker
 ## Notes
 In the first point of the text, the application asks to do a search with minimum 3 characters and i have done this, but if i try to search "pik" or something else, the api returns 404.
 The api wants the correct name of the pokemon to search.
-I have created a simple cache, to evitate a new reasearch of the same pokemon. 
+I have created a simple cache, to awoid a new reasearch of the same pokemon. 
 Deck can be only one, when created it will be saved into the Local Storage. If you add the 11 card, it replace the first one with the new one.
 Menu shows 4 items:
 - dashboard (it shows only a message)
 - pokedex (search pokemon)
 - deck (show your deck)
 - pikachu (show pika page)
-
-there is only a little problem on mobile, the menu in portrait mode disappear, if you use the website in landscape all is ok.

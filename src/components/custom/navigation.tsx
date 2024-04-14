@@ -1,38 +1,42 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const NavigationMenu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface NavigationMenuProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+const NavigationMenu = ({ isOpen, toggleMenu }: NavigationMenuProps) => {
 
   return (
     <div className="relative">
-      <div className={`flex flex-col h-screen md:w-64 bg-gray-800 shadow-lg ${isMenuOpen ? '': 'hidden md:flex'}`}>
-        <div className="flex items-center justify-center h-16 bg-gray-900 text-white text-xl font-semibold">
-          <img src="/poke.png" alt="Pokemon Logo" className="h-8 mr-2" />
-          <span className="ml-2">Card System</span>
+      <div className={`flex flex-col h-screen md:w-64 bg-gray-800 shadow-lg md:flex md:w-64 ${isOpen ? '': 'hidden md:flex'}`}>
+        <div className="flex items-center justify-between h-16 bg-gray-900 text-white text-xl font-semibold">
           <button className="md:hidden ml-auto mr-4" onClick={toggleMenu}>
-            {isMenuOpen ? 'Close' : 'Open'}
+            <FontAwesomeIcon icon={faBars} />
           </button>
+          <div className="flex items-center">
+            <img src="/poke.png" alt="Pokemon Logo" className="h-8 mr-2" />
+            <span className="ml-2">Card System</span>
+          </div>
         </div>
-        <ul className="py-4 flex-grow overflow-y-auto">
+        <ul className="py-4 md:flex-grow md:overflow-y-auto">
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
             <Link href="/home">
               <span className="text-white hover:text-gray-300">Home</span>
             </Link>
           </li>
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
-          <Link href="/search">
+            <Link href="/search">
               <span className="text-white hover:text-gray-300">Pokedex</span>
             </Link>
           </li>
           <li className="px-6 py-2 hover:bg-gray-700 cursor-pointer">
-          <Link href="/deck">
+            <Link href="/deck">
               <span className="text-white hover:text-gray-300">Deck</span>
             </Link>
           </li>
@@ -43,7 +47,7 @@ const NavigationMenu = () => {
           </li>
         </ul>
         
-        <div className="flex items-center justify-between px-6 py-4">
+        <div className="md:flex md:items-center md:justify-between px-6 py-4">
           <div className="flex items-center">
             <img
               src="/ash.png"
@@ -52,15 +56,23 @@ const NavigationMenu = () => {
             />
             <span className="text-white">Ash</span>
           </div>
-          <button
-            className="text-white hover:text-gray-300"
-          >
-            Logout
-          </button>
+          <Link href="/login">
+            <span className="text-white hover:text-gray-300 cursor-pointer" onClick={toggleMenu}>
+              Logout
+            </span>
+          </Link>
         </div>
       </div>
+      {!isOpen && (
+        <div className="absolute top-4 right-4 md:hidden">
+          <button className="text-white" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
 export default NavigationMenu;
+
