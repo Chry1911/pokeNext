@@ -54,7 +54,21 @@ pikachu
 ```
 
 ## Docker
-Info for run the application on docker
+Info for run the application on docker.
+The application use node 20.10.0 (the machine that runs the project is an ubuntu machine, with nvm installed)
+The application run with Docker, so you don't need to install anything, only the first npm install.
+To build image for docker run this command:
+```
+sudo docker buildx build -t pokenext-image path-where-project-is-located
+```
+In my case the project was on this path "/home/chrisdev/Scrivania/pokeNext"
+
+After this run the second command:
+```
+ sudo docker run -p 3000:3000 pokenext-image
+```
+
+It launch it on port 3000.
 
 ## Notes
 In the first point of the text, the application asks to do a search with minimum 3 characters and i have done this, but if i try to search "pik" or something else, the api returns 404.
