@@ -67,30 +67,37 @@ export const columns: ColumnDef<PokemonType>[] = [
 
 // Function to add a Pokémon to the deck of cards
 async function addPokemonToDeck(pokemon: PokemonType) {
-    try {
-        let deck = getDeckFromLocalStorage();
-        if (!deck) {
-            alert('Please create a deck before adding cards.');
-            return;
-        }
+  try {
+      let deck = getDeckFromLocalStorage();
+      if (!deck) {
+          alert('Please create a deck before adding cards.');
+          return;
+      }
 
-        // Check if the deck is full
-        if (deck.cards.length >= 10) {
-            // If the deck is full, remove the first card
-            deck.cards.shift(); // Remove the first card from the deck
-        }
+      // Check if the deck already contains the same Pokémon
+      const isDuplicate = deck.cards.some((card) => card.name === pokemon.name);
+      if (isDuplicate) {
+          alert('This Pokémon is already in the deck.');
+          return;
+      }
 
-        // Add the new Pokemon to the deck
-        deck.cards.push(pokemon);
+      // Check if the deck is full
+      if (deck.cards.length >= 10) {
+          // If the deck is full, remove the first card
+          deck.cards.shift();
+      }
 
-        // Save the updated deck to local storage
-        saveDeckToLocalStorage(deck);
+      // Add the new Pokemon to the deck
+      deck.cards.push(pokemon);
 
-        alert('Card added to deck successfully.');
-    } catch (error) {
-        console.error('Error adding card to deck:', error);
-        
-    }
+      // Save the updated deck to local storage
+      saveDeckToLocalStorage(deck);
+
+      alert('Card added to deck successfully.');
+  } catch (error) {
+      console.error('Error adding card to deck:', error);
+      // Handle error
+  }
 }
 
 // Function to get the deck from local storage
